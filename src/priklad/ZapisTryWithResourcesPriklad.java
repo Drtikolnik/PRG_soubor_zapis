@@ -1,10 +1,12 @@
+package priklad;
+
 import java.io.IOException;
 import java.io.BufferedWriter;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
 
-public class ZapisTryWithResources {
+public class ZapisTryWithResourcesPriklad {
 
     public static void main(String[] args) {
 
