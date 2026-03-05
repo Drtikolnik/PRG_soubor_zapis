@@ -51,6 +51,7 @@ public class Ukol1 {
             Files.write(soubor, radky);
 
             System.out.println(Files.readString(soubor));
+            System.out.println("Počet slov:" +radky.toArray().length);
 
 
 

@@ -49,19 +49,38 @@ public class Ukol2 {
 
             // Zápis do souboru (vytvoří nebo přepíše soubor)
             Files.write(soubor, radky);
-
-
-
-
             List<String> radkyCisla = Files.readAllLines(soubor);
 
 
+            int velikost = 1;
+            int celkem = 0;
+
+            for (String s : radky) {
+                celkem += Integer.parseInt(s);
+                if (velikost == 1) {
+                    System.out.print(s);
+                    velikost++;
+                }else if (velikost < radky.size()) {
+                    if( Integer.parseInt(s) < 0){
+                        System.out.print(" + (" +s+ ")");
+                    }else{
+                        System.out.print(" + " +s);
+                    }
+                    velikost++;
+                }else{
+                    if( Integer.parseInt(s) <= 0){
+                        System.out.print(" + (" +s+ ") = " +celkem);
+                    }else{
+                        System.out.print(" + " +s+ " = " +celkem);
+                    }
+                    velikost++;
+                }
+
+            }
 
 
 
-
-
-
+            System.out.println("");
             System.out.println("Zápis proběhl úspěšně.");
             System.out.println("Absolutní cesta: " + soubor.toAbsolutePath());
         } catch (IOException e) {
