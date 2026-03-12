@@ -5,13 +5,25 @@ import java.io.BufferedWriter;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
+import java.util.List;
 
 public class ZapisTryWithResourcesPriklad {
 
     public static void main(String[] args) {
 
         // Relativní cesta k souboru
-        Path soubor = Path.of("data", "zprava.txt");
+        Path soubor = Path.of("data", "studenti_1000.csv");
+
+        try {
+            List<String> lines = Files.readAllLines(soubor);
+            for (String line : lines) {
+                System.out.println(line);
+            }
+
+        }
+        catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+        }
 
         try {
 
